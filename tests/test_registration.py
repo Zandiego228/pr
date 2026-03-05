@@ -35,6 +35,12 @@ def test_add_new_user(setup_database, connection):
     cursor.execute("SELECT * FROM users WHERE username='testuser';")
     user = cursor.fetchone()
     assert user, "Пользователь должен быть добавлен в базу данных."
+def test_authenticate_user(setup_database, connection):
+    user = authenticate_user('testuser', 'password123')
+    assert user, "Пользователь должен быть добавлен в базу данных."
+def test_display_users():
+    user = display_users()
+    assert user, "Пользователь должен быть добавлен в базу данных."
 
 # Возможные варианты тестов:
 """

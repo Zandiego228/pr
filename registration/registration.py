@@ -35,7 +35,7 @@ def display_users():
         cursor = conn.cursor()
         cursor.execute('SELECT username, email FROM users')
         for user in cursor.fetchall():
-            print(f"Логин: {user[0]}, Электронная почта: {user[1]}")
+            return f"Логин: {user[0]}, Электронная почта: {user[1]}"
 
 
 def user_choice():
